@@ -14,7 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import javax.servlet.http.HttpSession; 
 /**
  * Servlet implementation class UserLoginCheck
  */
@@ -42,7 +42,8 @@ public class UserLoginCheck extends HttpServlet {
 	   
 	   ResultSet rs= pst.executeQuery();
 	   if(rs.next())
-	   {
+	   {	
+		   HttpSession session=request.getSession(); 
 		   RequestDispatcher dispatcher = request.getRequestDispatcher("/Welcome.jsp");
 			dispatcher.forward(request, response);
 				  

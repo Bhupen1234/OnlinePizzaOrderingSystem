@@ -36,7 +36,6 @@ form .form-field::before {
   background-size: cover;
   background-repeat: no-repeat;
 }
-
 form .form-field {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -80,18 +79,19 @@ form .btn {
 }
 </style>
 <body>
+<p style="float:right;">Store ID - <%= request.getParameter("id")%></p>
 <div class="formPopup" id="popupFormMod">
         <form action="./modifyinput" method="post">
                         
             <div class="form-field">
-                    <input type="text" name="storeid" placeholder="Store ID" required>
+                    <input type="text" name="storeid" placeholder="Store ID" value="${param.id}" required>
              </div>
             <div class="form-field">
                     <input type="text" name="storename" placeholder="Store Name" required>
              </div>
            
              <div class="form-field">
-               <input type="text" name="storeaddress" placeholder="Store Address" required>
+               <input type="text" name="address" placeholder="Store Address" required>
              </div>
 
              <div class="form-field">
@@ -113,8 +113,6 @@ form .btn {
       function closeForm() {
         document.getElementById("popupForm").style.display = "none";
       }
-
-
       function openFormModify() {
         document.getElementById("popupFormModify").style.display = "block";
         document.getElementById("popupForm").style.display = "none";
@@ -132,7 +130,6 @@ form .btn {
         
       }
     
-
 </script>
 
 </html>
